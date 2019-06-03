@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="@dimen/fab_margin"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="@dimen/fab_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".events.AddEditEventActivity"
+    tools:showIn="@layout/activity_add_edit_event">
+
+    <EditText
+        android:id="@+id/event_title"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:hint="Add description"
+        android:maxLines="3"
+        android:minLines="3"
+        app:layout_constraintTop_toBottomOf="@id/event_title" />
+
+    <TextView
+        android:id="@+id/category_caption"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:text="Category"
+        app:layout_constraintTop_toBottomOf="@id/event_description" />
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/label_dimen"
+        app:layout_constraintTop_toBottomOf="@id/category_caption" />
+
+    <View
+        android:id="@+id/view_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/standard_12"
+        android:layout_marginBottom="@dimen/standard_12"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/category_spinner" />
+
+    <TextView
+        android:id="@+id/start_caption"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:text="Starting on"
+        app:layout_constraintTop_toBottomOf="@id/view_bar1" />
+
+    <TextView
+        android:id="@+id/start_date"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/standard_12"
+        android:paddingRight="@dimen/standard_12"
+        android:paddingBottom="@dimen/standard_12"
+        android:text="13/12/2019"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_caption" />
+
+    <TextView
+        android:id="@+id/end_caption"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:text="Ending on"
+        app:layout_constraintTop_toBottomOf="@id/start_date" />
+
+    <TextView
+        android:id="@+id/end_date"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/standard_12"
+        android:paddingRight="@dimen/standard_12"
+        android:paddingBottom="@dimen/standard_12"
+        android:text="14/12/2019"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/end_caption" />
+
+    <TextView
+        android:id="@+id/start_time"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/standard_12"
+        android:paddingTop="@dimen/standard_12"
+        android:paddingBottom="@dimen/standard_12"
+        android:text="13:00"
+        android:textColor="@android:color/black"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/start_date" />
+
+    <TextView
+        android:id="@+id/end_time"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/standard_12"
+        android:paddingTop="@dimen/standard_12"
+        android:paddingBottom="@dimen/standard_12"
+        android:text="12:00"
+        android:textColor="@android:color/black"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/end_date" />
+
+    <View
+        android:id="@+id/view_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/standard_12"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/end_date" />
+
+    <Switch
+        android:id="@+id/notification_switch"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTopDouble"
+        android:text="Notifications"
+        app:layout_constraintTop_toBottomOf="@id/view_bar" />
+
+    <Spinner
+        android:id="@+id/notification_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/marginTopDouble"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/notification_switch" />
+
+</android.support.constraint.ConstraintLayout>

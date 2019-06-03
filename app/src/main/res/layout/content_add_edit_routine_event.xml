@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/fab_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".routines.AddEditRoutineEventActivity"
+    tools:showIn="@layout/activity_add_edit_routine_event">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/routine_event_title"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/routine_event_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/standard_12"
+            android:hint="Add description (optional)"
+            app:layout_constraintTop_toBottomOf="@id/routine_event_title" />
+
+        <LinearLayout
+            android:id="@+id/routine_event_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/standard_12"
+            android:layout_marginBottom="@dimen/standard_12"
+            app:layout_constraintTop_toBottomOf="@id/routine_event_description">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="From"
+                style="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:id="@+id/routine_event_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="16:30"
+                android:textColor="@android:color/black"
+                style="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="To"
+                style="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:id="@+id/routine_event_end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="20:20"
+                android:textColor="@android:color/black"
+            style="@style/TextAppearance.AppCompat.Medium" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/standard_12"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/routine_event_time" />
+
+        <LinearLayout
+            android:id="@+id/routine_event_repetition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/routine_event_time">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="@dimen/standard_12"
+                android:text="Repeat"
+                style="@style/TextAppearance.AppCompat.Caption" />
+
+            <RadioGroup
+                android:layout_marginTop="@dimen/label_dimen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/daily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="8dp"
+                    android:text="Daily"
+                    style="@style/TextAppearance.AppCompat.Body2"/>
+
+                <RadioButton
+                    android:id="@+id/working_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="8dp"
+                    android:text="Working days (Mon-Fri)"
+                    style="@style/TextAppearance.AppCompat.Body2"/>
+
+                <RadioButton
+                    android:id="@+id/weekend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="8dp"
+                    android:text="Weekend"
+                    style="@style/TextAppearance.AppCompat.Body2"/>
+
+                <RadioButton
+                    android:id="@+id/custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="8dp"
+                    android:text="Custom"
+                    style="@style/TextAppearance.AppCompat.Body2"/>
+            </RadioGroup>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/routine_event_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_12"
+                android:layout_marginRight="@dimen/standard_12"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/days_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <CheckBox
+                        android:id="@+id/monday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mon" />
+
+                    <CheckBox
+                        android:id="@+id/tuesday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tue" />
+
+                    <CheckBox
+                        android:id="@+id/wednesday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Wed" />
+
+                    <CheckBox
+                        android:id="@+id/thursday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Thu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/days_1">
+
+                    <CheckBox
+                        android:id="@+id/friday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fri"
+                        app:layout_constraintLeft_toRightOf="@id/thursday_check"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <CheckBox
+                        android:id="@+id/saturday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sat"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/monday_check" />
+
+                    <CheckBox
+                        android:id="@+id/sunday_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sun"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/saturday_check" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="false"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/standard_12"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="@dimen/standard_12"
+            app:layout_constraintTop_toBottomOf="@id/routine_event_repetition" />
+
+        <Switch
+            android:id="@+id/notification_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSwitchClicked"
+            android:layout_marginTop="@dimen/standard_12"
+            android:padding="8dp"
+            android:text="Notifications"
+            style="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintTop_toBottomOf="@id/view2" />
+
+        <Spinner
+            android:id="@+id/routine_event_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/notification_switch" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

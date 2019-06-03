@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">TimeO</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title"></string>
+    <string name="nav_header_subtitle">Organize your time like never before</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_add_edit_event">AddEditEventActivity</string>
+    <string name="title_activity_add_edit_reminder">AddEditReminderActivity</string>
+    <string name="title_activity_add_edit_routine_event">AddEditRoutineEventActivity</string>
+    <string name="title_activity_routine_details">RoutineDetailsActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="help_text">
+        \t\t\t Are you using TimeO for the first time or you just don\'t know how it works?
+        That\'s really simple! \n
+        \t\t\t TimeO app is divided into 3 main categories: Events, Reminders and Routines.\n
+        In order to be able to use it at it\'s whole capacity, you should really read this page
+        (I won\'t make it too long).\n \n
+        1. Events:\n
+        \t\t\t If you have a meeting or a special appointment or anything like that, which you know that it\'s
+        not going to be a repetitive activity nor just a simple reminder, you should add a new event
+        and add all the details you need. \n \n
+        2. Reminders:\n
+        \t\t\t If you need to set a quick reminder, you should add a new one. It\'s simple, easy to create!\n\n
+        3. Routines:\n
+        \t\t\t You have some repetitive activities like school program, work program or just some free time which
+        you\'d simply like to manage efficiently. If so, you should create a routine, where you can
+        store different activities that will be repeated as you want (everyday, only on working days, only
+        on weekends or you can customize them on your wish). All you have to do is to create a routine,
+        then add as many activities as you want in it. \n
+        \t\t\t You can create as many routines as you want, and you can set them active/inactive, according
+        to your needs.\n
+        \t\t\t Also, you have to notice that if you delete a routine which had some activities in it, you will lose
+        all those activities too.\n
+        \t\t\t You can rename routines and edit the activities within them as you need.\n
+        \t\t\t That being said, I hope you enjoy using this app!</string>
+
+    <string name="about_text">
+        \t\t\t TimeO application is a free application developed by Tiberiu Gaspar for educational
+        purposes only and probably won\'t even be available on Google PlayStore, therefore is a
+        completely free application, without any adds or malware or any other exploits. This app
+        doesn\'t require any special permissions, so all your data is safe.</string>
+    <string name="title_activity_reminder_details">ReminderDetailsActivity</string>
+    <string name="title_activity_event_details">EventDetailsActivity</string>
+    <string name="title_activity_routine_event_details">RoutineEventDetailsActivity</string>
+    <string name="details">details</string>
+    <string name="no_description">No description</string>
+    <string name="without_notification">Without notification</string>
+    <string name="daily">Daily</string>
+    <string name="working_days">Working days (Monday - Friday)</string>
+    <string name="weekend">Weekend only</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+</resources>

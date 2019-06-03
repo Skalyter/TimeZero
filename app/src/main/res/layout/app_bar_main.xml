@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/marginTop">
+
+                <LinearLayout
+                    android:id="@+id/navigation_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/resetDate"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/previous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onDayChanged"
+                        android:contentDescription="previous day"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_action_chevron_left" />
+
+                    <TextView
+                        android:id="@+id/today"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingTop="4dp"
+                        android:text="TODAY"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="onDayChanged"
+                        android:contentDescription="next day"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_action_chevron_right" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/navigation_reminder_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
+                    <TextView
+                        android:id="@+id/reminder_text_nav"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Reminders"
+                        style="@style/Base.TextAppearance.AppCompat.Title"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/resetDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDayChanged"
+                    android:contentDescription="reset date"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_action_restore"
+                    app:layout_constraintBottom_toBottomOf="@id/navigation_layout"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/navigation_layout" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/baseline_add_white_24" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="90dp"
+        android:src="@drawable/ic_event"
+        android:tooltipText="Add event"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/text_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="110dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Event"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:visibility="invisible" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="160dp"
+        android:src="@drawable/ic_reminder"
+        android:tooltipText="Add reminder"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/text_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="180dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Reminder"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:visibility="invisible" />
+
+</android.support.design.widget.CoordinatorLayout>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.AboutActivity"
+    tools:showIn="@layout/activity_about">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin">
+
+        <TextView
+            android:id="@+id/disclaimer"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/standard_12"
+            android:text="Disclaimer:"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/about_intro"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/marginTopDouble"
+            android:text="@string/about_text"
+            app:layout_constraintTop_toBottomOf="@id/disclaimer" />
+
+        <TextView
+            android:id="@+id/version_label"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/standard_12"
+            android:text="App version:"
+            app:layout_constraintTop_toBottomOf="@id/about_intro" />
+
+        <TextView
+            android:id="@+id/app_version"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="version 1.0"
+            app:layout_constraintTop_toBottomOf="@id/version_label" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="@dimen/fab_margin"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="@dimen/fab_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".reminders.AddEditReminderActivity"
+    tools:showIn="@layout/activity_add_edit_reminder">
+
+    <EditText
+        android:id="@+id/reminder_title"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/reminder_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:hint="Add description (optional)"
+        android:lines="3"
+        android:maxLines="5"
+        app:layout_constraintTop_toBottomOf="@id/reminder_title" />
+
+    <TextView
+        android:id="@+id/time_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:layout_marginBottom="@dimen/standard_12"
+        android:text="Set reminder at"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintTop_toBottomOf="@id/reminder_description"/>
+    <TextView
+        android:id="@+id/reminder_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/standard_12"
+        android:paddingRight="@dimen/standard_12"
+        android:paddingBottom="@dimen/standard_12"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_caption" />
+
+    <TextView
+        android:id="@+id/reminder_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/standard_12"
+        android:paddingTop="@dimen/standard_12"
+        android:paddingBottom="@dimen/standard_12"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/reminder_date" />
+
+    <View
+        android:id="@+id/view_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/standard_12"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/reminder_date" />
+
+    <Switch
+        android:id="@+id/reminder_notification_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:text="Notifications"
+        style="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintTop_toBottomOf="@id/view_bar" />
+
+    <Spinner
+        android:id="@+id/reminder_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_12"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/reminder_notification_switch" />
+</android.support.constraint.ConstraintLayout>

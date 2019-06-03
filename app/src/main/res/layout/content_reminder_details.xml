@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".reminders.ReminderDetailsActivity"
+    tools:showIn="@layout/activity_reminder_details">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin">
+
+        <TextView
+            android:id="@+id/title_caption"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/label_dimen"
+            android:text="Reminder"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reminder_title"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title_caption" />
+
+        <View
+            android:id="@+id/separator_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/standard_12"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/reminder_title" />
+
+        <TextView
+            android:id="@+id/description_caption"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_dimen"
+            android:paddingTop="@dimen/standard_12"
+            android:text="Description"
+            app:layout_constraintTop_toBottomOf="@id/separator_1" />
+
+        <TextView
+            android:id="@+id/reminder_description"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/label_dimen"
+            app:layout_constraintTop_toBottomOf="@id/description_caption" />
+
+        <View
+            android:id="@+id/separator_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/standard_12"
+            android:layout_marginBottom="@dimen/standard_12"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/reminder_description" />
+
+        <TextView
+            android:id="@+id/time_caption"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/standard_12"
+            android:text="Remind me at"
+            app:layout_constraintTop_toBottomOf="@id/separator_2" />
+
+        <LinearLayout
+            android:id="@+id/linear_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/label_dimen"
+            app:layout_constraintTop_toBottomOf="@id/time_caption">
+
+            <TextView
+                android:id="@+id/reminder_date"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="some date"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/reminder_time"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="some time"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/standard_12"
+            android:layout_marginBottom="@dimen/standard_12"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/linear_time" />
+
+        <TextView
+            android:id="@+id/notification_caption"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_dimen"
+            android:paddingTop="@dimen/standard_12"
+            android:text="Notifications"
+            app:layout_constraintTop_toBottomOf="@id/separator_3" />
+
+        <TextView
+            android:id="@+id/reminder_notification"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/label_dimen"
+            app:layout_constraintTop_toBottomOf="@id/notification_caption" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
